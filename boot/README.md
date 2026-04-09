@@ -6,7 +6,7 @@
    >> sudo dd if=ubuntu-24.04-desktop-amd64.iso of=/dev/sdX bs=4M status=progress oflag=sync
 
 2. Check existing partition and filesystem, clean, verify and Clone:
-`df -h`
+~ `df -h`
 `lsblk`
 >> sudo wipefs -a /dev/nvme1n1
 >> sudo dd if=/dev/nvme0n1 of=/dev/nvme1n1 bs=64K status=progress
