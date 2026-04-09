@@ -7,6 +7,6 @@
 
 2. Check existing partition and filesystem, clean, verify and Clone:
 `df -h`
->> `lsblk`
+`lsblk`
 >> sudo wipefs -a /dev/nvme1n1
 >> sudo dd if=/dev/nvme0n1 of=/dev/nvme1n1 bs=64K status=progress
