@@ -10,3 +10,14 @@
 - `lsblk`
 - `sudo wipefs -a /dev/nvme1n1`
 - `sudo dd if=/dev/nvme0n1 of=/dev/nvme1n1 bs=64K status=progress`
+
+3. Fix BOOT Sequence (sometimes needed)
+- `sudo mount /dev/nvme1n1p1 /mnt`
+- `sudo mount /dev/nvme1n1p2 /mnt/boot/efi`
+
+- `for i in /dev /proc /sys /run; do sudo mount --bind $i /mnt$i; done`
+- `sudo chroot /mnt`
+
+- `grub-install /dev/nvme1n1`
+- `update-grub`
+- `exit`
